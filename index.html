@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Task Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="topbar-title">PROJECT MANAGER</span>
+    <div class="avatar-icon">👤</div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Sprint Backlog</h1>
+    <p class="page-subtitle">Manage current tasks, track progress, and organize incoming requests for the frontend development cycle.</p>
+
+    <div class="task-input-row">
+      <span class="input-icon">✓+</span>
+      <input type="text" id="taskInput" class="task-input" placeholder="What needs to be done?">
+      <button id="addTaskBtn" class="btn-primary">+ ADD TASK</button>
+    </div>
+
+    <nav class="filters">
+      <button class="filter-btn active" data-filter="all">
+        ALL <span class="count-badge">3</span>
+      </button>
+      <button class="filter-btn" data-filter="active">
+        ACTIVE <span class="count-badge">2</span>
+      </button>
+      <button class="filter-btn" data-filter="completed">
+        COMPLETED <span class="count-badge">1</span>
+      </button>
+    </nav>
+
+    <ul id="taskList" class="task-list">
+      <!-- Example static task card (JS dev will render these dynamically) -->
+      <li class="task-card" data-id="1">
+        <span class="grip-handle">⠿</span>
+        <input type="checkbox" class="task-checkbox">
+        <span class="task-text">Build interactive prototype for new dashboard</span>
+        <button class="delete-btn">Delete</button>
+      </li>
+
+      <li class="task-card" data-id="2">
+        <span class="grip-handle">⠿</span>
+        <input type="checkbox" class="task-checkbox">
+        <span class="task-text">Implement CSS grid layout for the main board view</span>
+        <button class="delete-btn">Delete</button>
+      </li>
+
+      <li class="task-card" data-id="3">
+        <span class="grip-handle">⠿</span>
+        <input type="checkbox" class="task-checkbox" checked>
+        <span class="task-text completed">Set up initial repository and Tailwind configuration</span>
+        <button class="delete-btn">Delete</button>
+      </li>
+    </ul>
+
+    <p id="emptyState" class="empty-state" hidden>No tasks yet — add one above to get started.</p>
+  </main>
+
+  <footer class="footer">
+    © 2024 Team Task Board • Synchrony Design System
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
